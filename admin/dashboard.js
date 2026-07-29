@@ -1,12 +1,1 @@
-async function loadDashboard(){
-  const endpoints = ['users','workspaces','agents','logs'];
-  const results = {};
-  for (const endpoint of endpoints) {
-    const response = await fetch(`/api/${endpoint}`);
-    results[endpoint] = await response.json();
-  }
-  window.GrowthOSDashboard = results;
-  return results;
-}
-
-window.addEventListener('load', loadDashboard);
+async function load(){const c=document.getElementById('content');for(const name of ['users','workspaces','agents','logs']){try{const r=await fetch('/api/'+name);const d=await r.json();c.innerHTML+=`<h3>${name}</h3><pre>${JSON.stringify(d,null,2)}</pre>`}catch(e){c.innerHTML+=`<p>${name}: backend unavailable</p>`}}}load();

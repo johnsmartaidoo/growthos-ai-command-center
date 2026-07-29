@@ -1,13 +1,1 @@
-async function loadGrowthOS(){
- const sections=['users','workspaces','agents','logs'];
- const data={};
- for(const section of sections){
-  const r=await fetch(`/api/${section}`);
-  data[section]=await r.json();
- }
- document.querySelectorAll('[data-section]').forEach(el=>{
-  const key=el.dataset.section;
-  el.innerHTML=JSON.stringify(data[key],null,2);
- });
-}
-window.onload=loadGrowthOS;
+async function load(){const app=document.getElementById('app');const sections=['users','workspaces','agents','logs'];app.innerHTML='<h2>System Overview</h2>'+sections.map(x=>`<section><h3>${x}</h3><pre id="${x}">Loading...</pre></section>`).join('');for(const s of sections){try{const r=await fetch('/api/'+s);document.getElementById(s).textContent=JSON.stringify(await r.json(),null,2)}catch(e){document.getElementById(s).textContent='Backend connection unavailable'}}}load();
