@@ -1,13 +1,9 @@
-// GrowthOS Admin v2 live workspace management
-
 const Workspaces = {
-  workspaces: [],
-
-  async load() {
+  data: [],
+  async load(){
     const response = await fetch('/api/workspaces');
-    this.workspaces = await response.json();
-    return this.workspaces;
+    this.data = await response.json();
+    return this.data;
   }
 };
-
-export default Workspaces;
+window.Workspaces = Workspaces;

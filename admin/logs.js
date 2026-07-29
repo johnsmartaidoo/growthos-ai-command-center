@@ -1,13 +1,9 @@
-// GrowthOS Admin v2 live audit logs
-
-const AuditLogs = {
-  logs: [],
-
-  async load() {
+const Logs = {
+  data: [],
+  async load(){
     const response = await fetch('/api/logs');
-    this.logs = await response.json();
-    return this.logs;
+    this.data = await response.json();
+    return this.data;
   }
 };
-
-export default AuditLogs;
+window.Logs = Logs;

@@ -1,13 +1,9 @@
-// GrowthOS Admin v2 live AI agent control
-
 const Agents = {
-  agents: [],
-
-  async load() {
+  data: [],
+  async load(){
     const response = await fetch('/api/agents');
-    this.agents = await response.json();
-    return this.agents;
+    this.data = await response.json();
+    return this.data;
   }
 };
-
-export default Agents;
+window.Agents = Agents;
