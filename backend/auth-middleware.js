@@ -1,10 +1,10 @@
 // GrowthOS Admin v2 authentication and RBAC middleware
 
-async function requireAuth(req) {
+async function requireAuth(req, res, next) {
   if (!req.user) {
-    throw new Error('Unauthorized');
+    return res.status(401).json({ error: 'Unauthorized' });
   }
-  return req.user;
+  next();
 }
 
 async function requirePermission(user, permission) {
