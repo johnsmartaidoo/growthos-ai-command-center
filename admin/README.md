@@ -1,13 +1,8 @@
-# GrowthOS Admin Portal
+# GrowthOS Admin Dashboard v1
 
-Foundation for the secure administration layer.
-
-Planned production features:
-- Secure authentication provider
-- Role-based access control
-- Admin dashboard
-- User management
+Added:
+- Admin dashboard interface
+- User management section
 - Client workspace controls
-- Audit logs
-
-Credentials must be managed through environment secrets and an authentication service.
+- AI agent controls
+- System monitoring foundation

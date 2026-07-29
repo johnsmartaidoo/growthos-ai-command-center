@@ -1,0 +1,1 @@
+body{margin:0;background:#020617;color:white;font-family:Arial;display:flex}aside{width:240px;background:#111827;padding:30px;min-height:100vh}nav{line-height:3;color:#cbd5e1}main{padding:40px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}.cards div{background:#0f172a;padding:30px;border-radius:16px;border:1px solid #334155}
