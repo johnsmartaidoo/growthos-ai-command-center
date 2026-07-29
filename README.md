@@ -1,9 +1,10 @@
-# GrowthOS AI Command Center v2
+# GrowthOS AI Command Center v3
 
-AI Growth Operating System SaaS dashboard.
+AI Growth Operating System platform.
 
-Modules:
-- AI Strategy Engine
-- Content Intelligence Hub
-- Analytics Command Center
-- Automation Layer
+Features:
+- AI Strategy Agent
+- Content Agent
+- Analytics Agent
+- Client Workspace
+- Automation Foundation
