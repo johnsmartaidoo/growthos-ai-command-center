@@ -1,2 +1,3 @@
-# growthos-ai-command-center
-GrowthOS AI Command Center - an AI-powered growth operations dashboard.
+# GrowthOS AI Command Center
+
+AI-powered growth operations dashboard.
