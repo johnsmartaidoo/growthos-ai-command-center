@@ -1,18 +1,11 @@
-// GrowthOS Admin v2 Audit Logs foundation
+// GrowthOS Admin v2 live audit logs
 
 const AuditLogs = {
   logs: [],
 
-  record(event) {
-    const entry = {
-      ...event,
-      timestamp: event.timestamp || new Date().toISOString()
-    };
-    this.logs.push(entry);
-    return entry;
-  },
-
-  list() {
+  async load() {
+    const response = await fetch('/api/logs');
+    this.logs = await response.json();
     return this.logs;
   }
 };

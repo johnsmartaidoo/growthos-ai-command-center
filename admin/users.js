@@ -1,21 +1,12 @@
-// GrowthOS Admin v2 User Management foundation
+// GrowthOS Admin v2 live user management
 
 const Users = {
   users: [],
 
-  create(user) {
-    this.users.push({...user, status: user.status || 'active'});
-    return user;
-  },
-
-  update(id, data) {
-    const user = this.users.find(item => item.id === id);
-    if (user) Object.assign(user, data);
-    return user;
-  },
-
-  remove(id) {
-    this.users = this.users.filter(item => item.id !== id);
+  async load() {
+    const response = await fetch('/api/users');
+    this.users = await response.json();
+    return this.users;
   }
 };
 

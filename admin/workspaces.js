@@ -1,24 +1,12 @@
-// GrowthOS Admin v2 Client Workspace Management foundation
+// GrowthOS Admin v2 live workspace management
 
 const Workspaces = {
   workspaces: [],
 
-  create(workspace) {
-    const item = {...workspace, status: workspace.status || 'active'};
-    this.workspaces.push(item);
-    return item;
-  },
-
-  update(id, data) {
-    const workspace = this.workspaces.find(item => item.id === id);
-    if (workspace) Object.assign(workspace, data);
-    return workspace;
-  },
-
-  archive(id) {
-    const workspace = this.workspaces.find(item => item.id === id);
-    if (workspace) workspace.status = 'archived';
-    return workspace;
+  async load() {
+    const response = await fetch('/api/workspaces');
+    this.workspaces = await response.json();
+    return this.workspaces;
   }
 };
 
